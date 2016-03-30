@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DIALOG page="login" title="TLogin">
+
+	<STRING name="name" />
+	<STRING name="pass" />
+
+	<BEAN name="bean" class="org.janus.gui.vaadin.application.MoveToPage">
+		<CALL name="TablePage" command="move" test="false">
+			<SET var="page" constant="TablePage" />
+		</CALL>
+		<CALL name="ButtonPage" command="move" test="false">
+			<SET var="page" constant="ButtonPage" />
+		</CALL>
+	</BEAN>
+
+	<GUI>
+
+		<VBOX>
+			<LABEL text="Login" />
+
+			<HBOX>
+				<LABEL text="Name" />
+				<TEXTFIELD name="name" />
+			</HBOX>
+			<HBOX>
+				<LABEL text="Passwort" />
+				<TEXTFIELD name="pass" />
+
+			</HBOX>
+			<BUTTON name="TablePage" text="zu den Tabellen" />
+			<BUTTON name="ButtonPage" text="zu den Buttons" />
+		</VBOX>
+
+	</GUI>
+</DIALOG>

@@ -1,0 +1,63 @@
+<Configuration status="WARN">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+		<File name="MyFile" fileName="logs/app.log">
+			<PatternLayout>
+				<Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+				</Pattern>
+			</PatternLayout>
+		</File>
+	</Appenders>
+	<Loggers>
+
+		<Logger name="org.janus.value.Setter" level="debug">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="MyFile" />
+		</Logger>
+
+		<Logger name="org.janus.builder.actions.CALLBuilder" level="debug">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="MyFile" />
+		</Logger>
+
+		<Logger name="org.janus.gui.vaadin.MenuBarConnector" level="info">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="MyFile" />
+		</Logger>
+
+		<Logger name="org.janus.gui.vaadin.StageConnector" level="info">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="MyFile" />
+		</Logger>
+
+		<Logger name="org.janus.gui.vaadin.application.AppPageProvider"
+			level="info">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="MyFile" />
+		</Logger>
+
+		<Logger name="org.janus.gui.vaadin.VaadinTableModelConnector"
+			level="info">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="MyFile" />
+		</Logger>
+		<Logger name="builder.test.AddValue" level="info">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="MyFile" />
+		</Logger>
+		<Logger name="org.janus.gui.vaadin.VaadinBasisConnector" level="info">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="MyFile" />
+		</Logger>
+		<Logger name="org.janus.gui.vaadin.ButtonConnector" level="info">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="MyFile" />
+		</Logger>
+		<Root level="error">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="MyFile" />
+		</Root>
+	</Loggers>
+</Configuration>

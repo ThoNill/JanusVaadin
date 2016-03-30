@@ -1,0 +1,54 @@
+@import "mytheme.scss";
+@import "addons.scss";
+
+// This file prefixes all rules with the theme name to avoid causing conflicts with other themes.
+// The actual styles should be defined in mytheme.scss
+
+.mytheme {
+  @include addons;
+  @include mytheme;
+
+  .blue {
+    color: blue;
+  }
+  
+  .red {
+    color: red;
+  }
+  
+   .green {
+    color: green;
+  }
+  
+  .yellow {
+    color: yellow;
+  }
+  
+  .magenta   {
+    color: magenta;
+  }
+  
+  
+  .bgblue {
+    background-color: blue;
+  }
+  
+  .bgred {
+    background-color: red;
+  }
+  
+  .bggreen {
+    background-color: green;
+  }
+  
+  .bgyellow {
+    background-color: yellow;
+  }
+  
+  .bgmagenta   {
+    background-color: magenta;
+  }
+  
+  
+  
+}
