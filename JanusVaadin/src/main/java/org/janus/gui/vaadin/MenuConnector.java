@@ -3,7 +3,7 @@
 package org.janus.gui.vaadin;
 
 import java.io.Serializable;
-import java.util.Vector;
+import java.util.List; import java.util.ArrayList;
 
 import org.janus.gui.basis.GuiComponent;
 import org.janus.gui.enums.GuiType;
@@ -57,7 +57,7 @@ public class MenuConnector extends VaadinBasisConnector implements Command {
 	@Override
 	public void addComponent(GuiComponent comp) {
 		if (childComponents == null) {
-			childComponents = new Vector<>();
+			childComponents = new ArrayList<>();
 		}
 		childComponents.add(comp);
 	}

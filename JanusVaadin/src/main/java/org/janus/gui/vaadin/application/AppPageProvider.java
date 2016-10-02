@@ -20,7 +20,7 @@ public class AppPageProvider implements ViewProvider {
 	private JanusApplication app;
 	private JanusSession session;
 
-	public AppPageProvider(String appName) throws Exception {
+	public AppPageProvider(String appName)  {
 		LOG.debug("AppPage für Anwendung {}",appName);
 		GuiElementBuilder elementBuilder = new VaadinGuiElementBuilder();
 		AppBuilder builder = new AppBuilder(elementBuilder);

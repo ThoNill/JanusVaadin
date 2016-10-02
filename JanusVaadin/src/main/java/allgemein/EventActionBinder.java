@@ -1,14 +1,20 @@
 package allgemein;
 
 import java.awt.event.ActionEvent;
+
+
+import org.apache.log4j.Logger;
 import org.janus.actions.Action;
 import org.janus.data.DataContext;
 import org.janus.dict.actions.ActionDictionary;
 import org.janus.gui.enums.MouseEvents;
 
+
 import com.vaadin.ui.Component;
 
 public class EventActionBinder {
+    private static final Logger LOG = Logger.getLogger(EventActionBinder.class);
+
 	private String actionName;
 	private Action action;
 	private DataContext context;
@@ -21,12 +27,12 @@ public class EventActionBinder {
 		try {
 			keyEvent = JavaFXKeyEventType.valueOf(eventName);
 		} catch (Exception ex) {
-
+		    LOG.error("can not bind KeyEvent",ex);
 		}
 		try {
 			mouseEvent = MouseEvents.valueOf(eventName);
 		} catch (Exception ex) {
-
+		    LOG.error("can not bind MouseEvent",ex);
 		}
 	}
 

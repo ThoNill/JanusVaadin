@@ -1,20 +1,20 @@
 package allgemein;
 
-import java.util.Vector;
+import java.util.List; import java.util.ArrayList;
 
 import org.janus.data.DataContext;
 
 import com.vaadin.ui.Component;
 
 public class EventActionBinderList {
-	Vector<EventActionBinder> list = new Vector<>();
+	List<EventActionBinder> list = new ArrayList<>();
 
 	public EventActionBinderList() {
 		
 	}
 
 	public void addElement(EventActionBinder obj) {
-		list.addElement(obj);
+		list.add(obj);
 	}
 
 	public void register(Component component) {

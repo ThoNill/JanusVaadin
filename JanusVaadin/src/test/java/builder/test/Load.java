@@ -2,6 +2,8 @@ package builder.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+
+import org.apache.log4j.Logger;
 import org.janus.binder.BindWalker;
 import org.janus.builder.BuilderWalker;
 import org.janus.dict.actions.ActionDictionary;
@@ -13,6 +15,8 @@ import org.junit.Test;
 import toni.druck.xml.XMLDocumentLoader;
 
 public class Load {
+    private static final String UNERWARTETE_EXCEPTION = "unerwartete Exception";
+    private static final Logger LOG = Logger.getLogger(Load.class);
 
 	@Test
 	public void loadDocument() {
@@ -22,6 +26,7 @@ public class Load {
 			assertNotNull(page);
 
 		} catch (Exception e) {
+		    LOG.error(UNERWARTETE_EXCEPTION,e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}
@@ -37,6 +42,7 @@ public class Load {
 			assertNotNull(page);
 
 		} catch (Exception e) {
+		    LOG.error(UNERWARTETE_EXCEPTION,e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}
@@ -70,6 +76,7 @@ public class Load {
 			assertNotNull(page);
 
 		} catch (Exception e) {
+		    LOG.error(UNERWARTETE_EXCEPTION,e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}	

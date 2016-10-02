@@ -82,6 +82,7 @@ public class ButtonConnector extends VaadinBasisConnector implements
 			merkeUIimThread();
 			SessionInterface.performAction(action, context);
 		} catch (Exception ex) {
+		    LOG.error("fehler bei Button Click",ex);
 			Notification.show("Action", ex.getMessage(),
 					Notification.Type.ERROR_MESSAGE);
 		}

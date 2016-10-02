@@ -1,7 +1,7 @@
 package org.janus.gui.vaadin.builder;
 
 import java.util.List;
-import java.util.Vector;
+import java.util.List; import java.util.ArrayList;
 
 import javax.swing.text.html.StyleSheet;
 
@@ -184,7 +184,7 @@ public class VaadinGuiElementBuilder implements GuiElementBuilder {
 	}
 
 	private GuiComponent createTableConnector(Element elem, Action a) {
-		List<TableColumnDescription> columnDescriptions = new Vector<>();
+		List<TableColumnDescription> columnDescriptions = new ArrayList<>();
 		boolean withColumns = false;
 		for (Element e : elem.getChildren()) {
 			if ("COLUMN".equals(e.getName())) {

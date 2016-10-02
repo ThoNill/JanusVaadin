@@ -1,6 +1,8 @@
 package builder.test;
 
+import org.apache.log4j.Logger;
 import org.janus.gui.vaadin.application.AppPageProvider;
+
 import javax.servlet.annotation.WebServlet;
 
 import com.vaadin.annotations.Theme;
@@ -17,6 +19,7 @@ import com.vaadin.ui.UI;
 @Theme("mytheme")
 @Widgetset("thomas.nill.TestVaadin.MyAppWidgetset")
 public class TestVaadinApp extends UI {
+    private static final Logger LOG = Logger.getLogger(TestVaadinApp.class);
 	
 
 	@Override
@@ -31,7 +34,7 @@ public class TestVaadinApp extends UI {
 			navigator.navigateTo(path);
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOG.error("Fehler",e);;
 		}
 		
 	}

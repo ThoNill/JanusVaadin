@@ -62,7 +62,7 @@ public abstract class VaadinTableModelConnector extends VaadinBasisConnector imp
 			tableWrapper.setCurrentRow(context, selectedRow);
 			performAllActions();
 		} catch (Exception ex) {
-			ex.printStackTrace();
+			LOG.error("Fehler",ex);;
 
 		}
 
@@ -137,7 +137,7 @@ public abstract class VaadinTableModelConnector extends VaadinBasisConnector imp
 				getItems().select(tm.getCurrentRow());
 			}
 		} catch (Exception ex) {
-			ex.printStackTrace();
+			LOG.error("Fehler",ex);;
 		}
 	}
 

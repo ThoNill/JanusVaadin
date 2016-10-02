@@ -2,6 +2,9 @@ package thomas.nill.TestVaadin;
 
 import javax.servlet.annotation.WebServlet;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.annotations.Widgetset;
@@ -21,6 +24,8 @@ import com.vaadin.ui.VerticalLayout;
 @Theme("mytheme")
 @Widgetset("thomas.nill.TestVaadin.MyAppWidgetset")
 public class MyUI extends UI {
+    private static final Logger LOG = LogManager
+            .getLogger(MyUI.class);
 
 	@Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -51,6 +56,7 @@ public class MyUI extends UI {
 		try {
 			return Integer.parseInt(a.getValue());
 		} catch (Exception ex) {
+		    LOG.debug("Eingabefehler",ex);
 			Notification.show("Fehler bei der Eingabe \n'" + a.getValue() + "' ist keine Zahl!",Type.ERROR_MESSAGE);
 		}
 		return 0;

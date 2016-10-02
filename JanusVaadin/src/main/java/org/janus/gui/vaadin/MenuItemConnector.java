@@ -3,9 +3,10 @@
 package org.janus.gui.vaadin;
 
 import java.io.Serializable;
+import java.util.List; import java.util.ArrayList;
 
-import java.util.Vector;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.janus.actions.Action;
 import org.janus.gui.basis.GuiComponent;
 import org.janus.gui.enums.GuiType;
@@ -24,6 +25,8 @@ import allgemein.SessionInterface;
  * @version %I%, %G%
  */
 public class MenuItemConnector extends VaadinBasisConnector implements Command {
+    private static final Logger LOG = LogManager
+            .getLogger(MenuItemConnector.class);
 	Action action;
 	String text;
 
@@ -66,6 +69,7 @@ public class MenuItemConnector extends VaadinBasisConnector implements Command {
 		try {
 			SessionInterface.performAction(action, context);
 		} catch (Exception ex) {
+		    LOG.error("fehler bei Perform Action",ex);
 			Notification.show("Action", ex.getMessage(),
 					Notification.Type.ERROR_MESSAGE);
 		}
@@ -80,7 +84,7 @@ public class MenuItemConnector extends VaadinBasisConnector implements Command {
 	@Override
 	public void addComponent(GuiComponent comp) {
 		if (childComponents == null) {
-			childComponents = new Vector<>();
+			childComponents = new ArrayList<>();
 		}
 		childComponents.add(comp);
 	}

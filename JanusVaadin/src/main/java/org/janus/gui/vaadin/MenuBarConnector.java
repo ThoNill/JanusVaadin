@@ -4,7 +4,7 @@ package org.janus.gui.vaadin;
 
 import java.awt.event.ActionEvent;
 import java.io.Serializable;
-import java.util.Vector;
+import java.util.List; import java.util.ArrayList;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -71,7 +71,7 @@ public class MenuBarConnector extends VaadinBasisConnector implements
 		 */
 
 		if (childComponents == null) {
-			childComponents = new Vector<>();
+			childComponents = new ArrayList<>();
 		}
 		childComponents.add(comp);
 	}

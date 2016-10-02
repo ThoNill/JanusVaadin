@@ -1,10 +1,12 @@
 package allgemein;
 
+import org.apache.log4j.Logger;
 import org.janus.actions.Action;
-
+import org.janus.actions.ActionPerformException;
 import org.janus.data.DataContext;
 
 public class ActionWithContext {
+    private static final Logger LOG = Logger.getLogger(ActionWithContext.class);
 	private DataContext context;
 	private Action action;
 
@@ -20,8 +22,8 @@ public class ActionWithContext {
 		try {
 			action.perform(context);
 		} catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			LOG.error("Fehler",e);;
+			throw new ActionPerformException(e);
 		}
 	}
 
