@@ -15,44 +15,45 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewProvider;
 
 public class AppPageProvider implements ViewProvider {
-	private static final Logger LOG = LogManager.getLogger(AppPageProvider.class);
-	
-	private JanusApplication app;
-	private JanusSession session;
+    private static final Logger LOG = LogManager
+            .getLogger(AppPageProvider.class);
 
-	public AppPageProvider(String appName)  {
-		LOG.debug("AppPage für Anwendung {}",appName);
-		GuiElementBuilder elementBuilder = new VaadinGuiElementBuilder();
-		AppBuilder builder = new AppBuilder(elementBuilder);
-		builder.setPageListe("data ButtonPage TablePage");
-		app = builder.getApplication(appName);
-		session = app.newContext();
-		LOG.debug("initialisiert");
-	}
+    private JanusApplication app;
+    private JanusSession session;
 
-	@Override
-	public String getViewName(String viewAndParameters) {
-		LOG.debug("getViewName {}",viewAndParameters);
-		int posQuestionMark = viewAndParameters.indexOf('?');
-		String beforeQuestionMark = (posQuestionMark < 0) ? viewAndParameters
-				: viewAndParameters.substring(0, posQuestionMark);
-		int posDiv = beforeQuestionMark.lastIndexOf('/');
-		String viewName =  (posDiv < 0) ? beforeQuestionMark : beforeQuestionMark
-				.substring(posDiv);
-		LOG.debug("getViewName Ergebnis {}",viewName);
-		return viewName;
-	}
+    public AppPageProvider(String appName) {
+        LOG.debug("AppPage für Anwendung {}", appName);
+        GuiElementBuilder elementBuilder = new VaadinGuiElementBuilder();
+        AppBuilder builder = new AppBuilder(elementBuilder);
+        builder.setPageListe("data ButtonPage TablePage");
+        app = builder.getApplication(appName);
+        session = app.newContext();
+        LOG.debug("initialisiert");
+    }
 
-	@Override
-	public View getView(String viewName) {
-		LOG.debug("hole View {}",viewName);
-		JanusPage login = session.searchPage(viewName);
-		PageContext context = session.getPageContext(login);
-		StageConnector frameConnector = (StageConnector) login.getGui();
-		frameConnector.setContext(context);
-		View view = new AppPage(session, frameConnector.getScene());
-		LOG.debug("View geholt");
-		return view;
-	}
+    @Override
+    public String getViewName(String viewAndParameters) {
+        LOG.debug("getViewName {}", viewAndParameters);
+        int posQuestionMark = viewAndParameters.indexOf('?');
+        String beforeQuestionMark = (posQuestionMark < 0) ? viewAndParameters
+                : viewAndParameters.substring(0, posQuestionMark);
+        int posDiv = beforeQuestionMark.lastIndexOf('/');
+        String viewName = (posDiv < 0) ? beforeQuestionMark
+                : beforeQuestionMark.substring(posDiv);
+        LOG.debug("getViewName Ergebnis {}", viewName);
+        return viewName;
+    }
+
+    @Override
+    public View getView(String viewName) {
+        LOG.debug("hole View {}", viewName);
+        JanusPage login = session.searchPage(viewName);
+        PageContext context = session.getPageContext(login);
+        StageConnector frameConnector = (StageConnector) login.getGui();
+        frameConnector.setContext(context);
+        View view = new AppPage(session, frameConnector.getScene());
+        LOG.debug("View geholt");
+        return view;
+    }
 
 }

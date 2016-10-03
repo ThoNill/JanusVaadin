@@ -31,9 +31,8 @@
 			<AppenderRef ref="Console" />
 			<AppenderRef ref="MyFile" />
 		</Logger>
-
 		<Logger name="org.janus.gui.vaadin.application.AppPageProvider"
-			level="info">
+			level="debug">
 			<AppenderRef ref="Console" />
 			<AppenderRef ref="MyFile" />
 		</Logger>

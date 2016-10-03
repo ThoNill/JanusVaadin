@@ -17,36 +17,36 @@ import com.vaadin.ui.Label;
  */
 public class LabelConnector extends VaadinBasisConnector {
 
-	/**
-	 * Constructor declaration
-	 * 
-	 * 
-	 * @param node
-	 * @param name
-	 * @param model
-	 * 
-	 * @see
-	 */
-	public LabelConnector(Label label) {
-		super(GuiType.LABEL, label);
-	//	label.setAlignmentX(Component.LEFT_ALIGNMENT);
-	}
+    /**
+     * Constructor declaration
+     * 
+     * 
+     * @param node
+     * @param name
+     * @param model
+     * 
+     * @see
+     */
+    public LabelConnector(Label label) {
+        super(GuiType.LABEL, label);
+        // label.setAlignmentX(Component.LEFT_ALIGNMENT);
+    }
 
-	public Label getJavaFXLabel() {
-		return (Label) getComponent();
-	}
+    public Label getJavaFXLabel() {
+        return (Label) getComponent();
+    }
 
-	@Override
-	protected void setGuiValueWithText(String text) {
-		if (text != null) {
-			getJavaFXLabel().setCaption(text);
-		}
-	}
+    @Override
+    protected void setGuiValueWithText(String text) {
+        if (text != null) {
+            getJavaFXLabel().setCaption(text);
+        }
+    }
 
-	@Override
-	public Serializable getGuiValue() {
-		return getJavaFXLabel().getCaption();
-	}
+    @Override
+    public Serializable getGuiValue() {
+        return getJavaFXLabel().getCaption();
+    }
 
 }
 

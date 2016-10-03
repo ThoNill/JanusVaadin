@@ -3,6 +3,7 @@
 package org.janus.gui.vaadin;
 
 import org.janus.gui.enums.GuiType;
+
 import com.vaadin.ui.OptionGroup;
 
 /**
@@ -12,21 +13,21 @@ import com.vaadin.ui.OptionGroup;
  * @author
  * @version %I%, %G%
  */
-public class RadioConnector extends SimpleTableConnector  {
+public class RadioConnector extends SimpleTableConnector {
 
-	/**
-	 * Constructor declaration
-	 * 
-	 * 
-	 * @param node
-	 * @param name
-	 * @param model
-	 * 
-	 * @see
-	 */
-	public RadioConnector(OptionGroup list) {
-		super(GuiType.RADIO, list);
-	}
+    /**
+     * Constructor declaration
+     * 
+     * 
+     * @param node
+     * @param name
+     * @param model
+     * 
+     * @see
+     */
+    public RadioConnector(OptionGroup list) {
+        super(GuiType.RADIO, list);
+    }
 
 }
 

@@ -10,8 +10,6 @@ import com.vaadin.data.Property.ValueChangeEvent;
 import com.vaadin.data.Property.ValueChangeListener;
 import com.vaadin.ui.CheckBox;
 
-
-
 /**
  * Class declaration
  * 
@@ -19,40 +17,36 @@ import com.vaadin.ui.CheckBox;
  * @author
  * @version %I%, %G%
  */
-public class CheckBoxConnector extends VaadinBasisConnector implements ValueChangeListener {
+public class CheckBoxConnector extends VaadinBasisConnector implements
+        ValueChangeListener {
 
-	public CheckBoxConnector(CheckBox box) {
-		super(GuiType.CHECK, box);
-		box.addValueChangeListener(this);
-	
-	}
+    public CheckBoxConnector(CheckBox box) {
+        super(GuiType.CHECK, box);
+        box.addValueChangeListener(this);
 
+    }
 
-	@Override
-	protected void setGuiValueWithText(String text) {
-		boolean b = Boolean.parseBoolean(text);
-		if (getCheckBox() != null) {
-			getCheckBox().setValue(b);
-		}
-	}
+    @Override
+    protected void setGuiValueWithText(String text) {
+        boolean b = Boolean.parseBoolean(text);
+        if (getCheckBox() != null) {
+            getCheckBox().setValue(b);
+        }
+    }
 
+    CheckBox getCheckBox() {
+        return (CheckBox) getComponent();
+    }
 
+    @Override
+    public Serializable getGuiValue() {
+        return getCheckBox().getValue();
+    }
 
-	CheckBox getCheckBox() {
-		return (CheckBox)getComponent();
-	}
-
-	@Override
-	public Serializable getGuiValue() {
-		return getCheckBox().getValue();
-	}
-
-	@Override
-	public void valueChange(ValueChangeEvent event) {
-		setModelValue("" + event.getProperty().getValue());
-	}
-	
-
+    @Override
+    public void valueChange(ValueChangeEvent event) {
+        setModelValue("" + event.getProperty().getValue());
+    }
 
 }
 

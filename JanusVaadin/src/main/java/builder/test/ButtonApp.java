@@ -9,20 +9,16 @@ import com.vaadin.server.VaadinServlet;
 
 @Theme("mytheme")
 @Widgetset("thomas.nill.TestVaadin.MyAppWidgetset")
-public class ButtonApp extends TestSinglePage  {
+public class ButtonApp extends TestSinglePage {
 
-	public ButtonApp() { 
-	//	super("TablePage");
-		super("ButtonPage");
-	}
-	
-	
-	@WebServlet(urlPatterns = "/Button", name = "ButtonServlet", asyncSupported = true)
-	@VaadinServletConfiguration(ui = ButtonApp.class, productionMode = false)
-	public static class ButtonServlet extends VaadinServlet {
-	}
+    public ButtonApp() {
+        // super("TablePage");
+        super("ButtonPage");
+    }
 
-	
+    @WebServlet(urlPatterns = "/Button", name = "ButtonServlet", asyncSupported = true)
+    @VaadinServletConfiguration(ui = ButtonApp.class, productionMode = false)
+    public static class ButtonServlet extends VaadinServlet {
+    }
 
-	
 }

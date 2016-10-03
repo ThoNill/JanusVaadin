@@ -11,29 +11,23 @@ import org.janus.builder.actions.DefaultBuilderAction;
 import org.janus.builder.actions.MAPTABLEBuilder;
 import org.janus.builder.actions.STRINGBuilder;
 
-
-
-
-
 public class TestBuilderWalker extends BuilderWalker {
 
-	public TestBuilderWalker(String name) {
-		super(name);
-	}
+    public TestBuilderWalker(String name) {
+        super(name);
+    }
 
-	@Override
-	protected void init(HashMap<String, BuilderAction> actions2) {
-		BEANBuilder bean = new BEANBuilder();
-		
-		put("ACTION", new ACTIONBuilder());
-		put("BATCH", new DefaultBuilderAction());
-		put("BEAN", bean);
-		put("CALL", new CALLBuilder(bean));
-		put("GLOBAL", new DefaultBuilderAction());
-		put("MAPTABLE", new MAPTABLEBuilder());
-		put("STRING", new STRINGBuilder());
-	}
+    @Override
+    protected void init(HashMap<String, BuilderAction> actions2) {
+        BEANBuilder bean = new BEANBuilder();
 
-
+        put("ACTION", new ACTIONBuilder());
+        put("BATCH", new DefaultBuilderAction());
+        put("BEAN", bean);
+        put("CALL", new CALLBuilder(bean));
+        put("GLOBAL", new DefaultBuilderAction());
+        put("MAPTABLE", new MAPTABLEBuilder());
+        put("STRING", new STRINGBuilder());
+    }
 
 }

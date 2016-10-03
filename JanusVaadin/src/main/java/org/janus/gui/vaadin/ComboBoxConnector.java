@@ -3,6 +3,7 @@
 package org.janus.gui.vaadin;
 
 import org.janus.gui.enums.GuiType;
+
 import com.vaadin.ui.ComboBox;
 
 /**
@@ -12,21 +13,21 @@ import com.vaadin.ui.ComboBox;
  * @author
  * @version %I%, %G%
  */
-public class ComboBoxConnector extends SimpleTableConnector  {
+public class ComboBoxConnector extends SimpleTableConnector {
 
-	/**
-	 * Constructor declaration
-	 * 
-	 * 
-	 * @param node
-	 * @param name
-	 * @param model
-	 * 
-	 * @see
-	 */
-	public ComboBoxConnector(ComboBox list) {
-		super(GuiType.COMBO, list);
-	}
+    /**
+     * Constructor declaration
+     * 
+     * 
+     * @param node
+     * @param name
+     * @param model
+     * 
+     * @see
+     */
+    public ComboBoxConnector(ComboBox list) {
+        super(GuiType.COMBO, list);
+    }
 
 }
 

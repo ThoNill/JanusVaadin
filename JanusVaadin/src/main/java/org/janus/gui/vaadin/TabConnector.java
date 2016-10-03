@@ -10,31 +10,28 @@ import org.janus.gui.enums.GuiType;
 import com.vaadin.ui.Component;
 
 public class TabConnector extends VaadinBasisConnector implements
-		ChangeListener {
+        ChangeListener {
 
-	private String name;
+    private String name;
 
-	public TabConnector(Component tab,String name) {
-		super(GuiType.TABS,tab);
-		this.name = name;
-		tab.setCaption(name);
-				
-	}
+    public TabConnector(Component tab, String name) {
+        super(GuiType.TABS, tab);
+        this.name = name;
+        tab.setCaption(name);
 
-	@Override
-	public void stateChanged(ChangeEvent e) {
-	}
+    }
 
-	@Override
-	public Serializable getGuiValue() {
-		return null;
-	}
+    @Override
+    public void stateChanged(ChangeEvent e) {
+    }
 
-	protected String getName() {
-		return name;
-	}
+    @Override
+    public Serializable getGuiValue() {
+        return null;
+    }
 
-	
-
+    protected String getName() {
+        return name;
+    }
 
 }

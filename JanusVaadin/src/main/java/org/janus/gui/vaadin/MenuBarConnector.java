@@ -4,7 +4,7 @@ package org.janus.gui.vaadin;
 
 import java.awt.event.ActionEvent;
 import java.io.Serializable;
-import java.util.List; import java.util.ArrayList;
+import java.util.ArrayList;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,70 +23,72 @@ import com.vaadin.ui.MenuBar;
  * @version %I%, %G%
  */
 public class MenuBarConnector extends VaadinBasisConnector implements
-		java.awt.event.ActionListener, NeedLaterGuiBuild {
-	private static final Logger LOG = LogManager.getLogger(MenuBarConnector.class);
-	
-	MenuBar bar;
-	/**
-	 * Constructor declaration
-	 * 
-	 * 
-	 * @param node
-	 * @param name
-	 * @param model
-	 * 
-	 * @see
-	 */
-	public MenuBarConnector(MenuBar bar) {
-		super(GuiType.MENUBAR, bar);
-		this.bar = bar;
-	}
+        java.awt.event.ActionListener, NeedLaterGuiBuild {
+    private static final Logger LOG = LogManager
+            .getLogger(MenuBarConnector.class);
 
-	@Override
-	public Component getComponent() {
-		return bar;
-	};
+    MenuBar bar;
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
+    /**
+     * Constructor declaration
+     * 
+     * 
+     * @param node
+     * @param name
+     * @param model
+     * 
+     * @see
+     */
+    public MenuBarConnector(MenuBar bar) {
+        super(GuiType.MENUBAR, bar);
+        this.bar = bar;
+    }
 
-	}
+    @Override
+    public Component getComponent() {
+        return bar;
+    };
 
-	@Override
-	public Serializable getGuiValue() {
-		return null;
-	}
+    @Override
+    public void actionPerformed(ActionEvent e) {
 
-	@Override
-	public void addComponent(GuiComponent comp) {
-		/*
-		 * 
-		 * MenuItem eins = getBar().addItem("Eins", null,null); MenuItem zwei =
-		 * getBar().addItem("Zwei", null,null);
-		 * 
-		 * eins.addItem("in eins", null,null); eins.addItem("nochmal in eins",
-		 * null,null);
-		 * 
-		 * zwei.addItem("in zwei", null,null);
-		 */
+    }
 
-		if (childComponents == null) {
-			childComponents = new ArrayList<>();
-		}
-		childComponents.add(comp);
-	}
+    @Override
+    public Serializable getGuiValue() {
+        return null;
+    }
 
-	@Override
-	public void buildGui() {
-		LOG.debug("buildGui");
-		if (childComponents != null) {
-			for (GuiComponent comp : childComponents) {
-				if (comp instanceof MenuConnector) {
-					((MenuConnector) comp).newItem(bar);
-				}
-			}
-		}
-	}
+    @Override
+    public void addComponent(GuiComponent comp) {
+        /*
+         * 
+         * MenuItem eins = getBar().addItem("Eins", null,null); MenuItem zwei =
+         * getBar().addItem("Zwei", null,null);
+         * 
+         * eins.addItem("in eins", null,null); eins.addItem("nochmal in eins",
+         * null,null);
+         * 
+         * zwei.addItem("in zwei", null,null);
+         */
+
+        if (childComponents == null) {
+            childComponents = new ArrayList<>();
+        }
+        childComponents.add(comp);
+    }
+
+    @Override
+    public void buildGui() {
+        LOG.debug("buildGui");
+        if (childComponents != null) {
+            for (GuiComponent comp : childComponents) {
+                if (comp instanceof MenuConnector) {
+                    ((MenuConnector) comp).newItem(bar);
+                }
+            }
+        }
+    }
 
 }
 

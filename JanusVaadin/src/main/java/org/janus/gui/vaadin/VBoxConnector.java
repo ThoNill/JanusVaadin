@@ -19,34 +19,34 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class VBoxConnector extends VaadinBasisConnector {
 
-	/**
-	 * Constructor declaration
-	 * 
-	 * 
-	 * @param node
-	 * @param name
-	 * @param model
-	 * 
-	 * @see
-	 */
-	public VBoxConnector(VerticalLayout panel) {
-		super(GuiType.VBOX, panel);
-		//panel.setAlignment(Pos.BOTTOM_LEFT);
-	}
+    /**
+     * Constructor declaration
+     * 
+     * 
+     * @param node
+     * @param name
+     * @param model
+     * 
+     * @see
+     */
+    public VBoxConnector(VerticalLayout panel) {
+        super(GuiType.VBOX, panel);
+        // panel.setAlignment(Pos.BOTTOM_LEFT);
+    }
 
-	public VBox getBox() {
-		return (VBox) getComponent();
-	}
+    public VBox getBox() {
+        return (VBox) getComponent();
+    }
 
-	@Override
-	protected void setGuiValueWithText(String text) {
-		
-	}
+    @Override
+    protected void setGuiValueWithText(String text) {
 
-	@Override
-	public Serializable getGuiValue() {
-		return "";
-	}
+    }
+
+    @Override
+    public Serializable getGuiValue() {
+        return "";
+    }
 
 }
 
