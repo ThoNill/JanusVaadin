@@ -63,8 +63,6 @@ public abstract class VaadinTableModelConnector extends VaadinBasisConnector
             performAllActions();
         } catch (Exception ex) {
             LOG.error("Fehler", ex);
-            ;
-
         }
 
     }
@@ -128,7 +126,7 @@ public abstract class VaadinTableModelConnector extends VaadinBasisConnector
 
     @Override
     public Serializable getGuiValue() {
-        // TODO Auto-generated method stub
+        
         return null;
     }
 
@@ -140,7 +138,6 @@ public abstract class VaadinTableModelConnector extends VaadinBasisConnector
             }
         } catch (Exception ex) {
             LOG.error("Fehler", ex);
-            ;
         }
     }
 

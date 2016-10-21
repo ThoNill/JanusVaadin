@@ -64,7 +64,7 @@ public class MenuConnector extends VaadinBasisConnector implements Command {
 
     @Override
     public void menuSelected(MenuItem selectedItem) {
-        // TODO Auto-generated method stub
+        
 
     }
 

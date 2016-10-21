@@ -1,5 +1,5 @@
 package org.janus.gui.vaadin.builder;
 
-public interface SwingAttributSetter {
+public interface VaadinAttributSetter {
     void setAttribut(String value);
 }

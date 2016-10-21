@@ -21,7 +21,6 @@ public class ActionWithContext {
             action.perform(context);
         } catch (Exception e) {
             LOG.error("Fehler", e);
-            ;
             throw new ActionPerformException(e);
         }
     }

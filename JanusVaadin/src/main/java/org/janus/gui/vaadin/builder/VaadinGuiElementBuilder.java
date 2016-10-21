@@ -293,7 +293,7 @@ public class VaadinGuiElementBuilder implements GuiElementBuilder {
     }
 
     private void setAttribut(Element elem, GuiField field,
-            SwingAttributSetter setter) {
+            VaadinAttributSetter setter) {
         String xmlValue = elem.getAttributeValue(field.name().toLowerCase());
         if (xmlValue != null) {
             setter.setAttribut(xmlValue);

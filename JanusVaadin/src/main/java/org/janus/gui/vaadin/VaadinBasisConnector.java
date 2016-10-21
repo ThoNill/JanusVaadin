@@ -34,8 +34,6 @@ import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.MenuBar.MenuItem;
 import com.vaadin.ui.Panel;
 
-//import probe.ColorAWT2Fx;
-//import java.awt.Color;
 
 public abstract class VaadinBasisConnector implements PropertyChangeListener,
         GuiComponent, ActionListener {
@@ -60,17 +58,10 @@ public abstract class VaadinBasisConnector implements PropertyChangeListener,
 
     public VaadinBasisConnector(GuiType type, Object component) {
         super();
-        // if (component == null) {
-        // throw new IllegalArgumentException(" Component component = null ");
-        // }
         id = ID.getId();
         this.type = type;
         this.component = component;
         this.childComponents = new ArrayList<>();
-        /*
-         * if (!(component != null && component instanceof Menu)) {
-         * getNode().addPropertyChangeListener(this); }
-         */
     }
 
     public Panel getTitleBorder() {

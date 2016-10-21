@@ -28,7 +28,7 @@ public class TestSinglePage extends UI {
 
     @Override
     protected void init(VaadinRequest request) {
-        // TODO Auto-generated method stub
+        
         startSinglePage();
 
     }
