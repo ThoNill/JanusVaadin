@@ -38,6 +38,11 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
+				<groupId>org.openjfx</groupId>
+				<artifactId>javafx-controls</artifactId>
+				<version>14</version>
+			</dependency>
+			<dependency>
 				<groupId>com.vaadin</groupId>
 				<artifactId>vaadin-bom</artifactId>
 				<version>${vaadin.version}</version>
